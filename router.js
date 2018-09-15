@@ -201,6 +201,10 @@ router.get('/tucaoqq/post/:project/:key', require('./routes/tucaoqq/post'));
 router.get('/toutiao/today', require('./routes/toutiao/today'));
 router.get('/toutiao/user/:id', require('./routes/toutiao/user'));
 
+// 众成翻译
+router.get('/zcfy/index', require('./routes/zcfy/index'));
+router.get('/zcfy/hot', require('./routes/zcfy/hot'));
+
 // 今日头条
 router.get('/jinritoutiao/keyword/:keyword', require('./routes/jinritoutiao/keyword'));
 
@@ -231,8 +235,11 @@ if (config.youtube && config.youtube.key) {
 
 // 即刻
 router.get('/jike/topic/:id', require('./routes/jike/topic'));
+router.get('/jike/topic/text/:id', require('./routes/jike/topicText'));
 router.get('/jike/topic/square/:id', require('./routes/jike/topicSquare'));
 router.get('/jike/user/:id', require('./routes/jike/user'));
+router.get('/jike/daily', require('./routes/jike/daily'));
+router.get('/jike/dev/:id', require('./routes/jike/topicDev'));
 
 // 极客时间
 router.get('/geektime/column/:cid', require('./routes/geektime/column'));
@@ -338,9 +345,6 @@ router.get('/caixin/:column/:category', require('./routes/caixin/category'));
 // 草榴社区
 router.get('/t66y/:id', require('./routes/t66y/index'));
 
-// 科技星球
-router.get('/kejixingqiu/home', require('./routes/kejixingqiu/home'));
-
 // 机核
 router.get('/gcores/category/:category', require('./routes/gcores/category'));
 
@@ -352,6 +356,9 @@ router.get('/one', require('./routes/one/index'));
 
 // Firefox
 router.get('/firefox/release/:platform', require('./routes/firefox/release'));
+
+// Thunderbird
+router.get('/thunderbird/release', require('./routes/thunderbird/release'));
 
 // tuicool
 router.get('/tuicool/mags/:type', require('./routes/tuicool/mags'));
@@ -408,6 +415,9 @@ router.get('/atfd/:locations/:nearby?', require('./routes/atfd/index'));
 // Fir
 router.get('/fir/update/:id', require('./routes/fir/update'));
 
+// Nvidia Web Driver
+router.get('/nvidia/webdriverupdate', require('./routes/nvidia/webdriverupdate'));
+
 // Google
 router.get('/google/scholar/:query', require('./routes/google/scholar'));
 
@@ -444,6 +454,7 @@ router.get('/uukanshu/chapter/:uid', require('./routes/novel/uukanshu'));
 router.get('/novel/biquge/:id', require('./routes/novel/biquge'));
 router.get('/novel/uukanshu/:uid', require('./routes/novel/uukanshu'));
 router.get('/novel/wenxuemi/:id1/:id2', require('./routes/novel/wenxuemi'));
+router.get('/novel/booksky/:id', require('./routes/novel/booksky'));
 
 // 中国气象网
 router.get('/weatherAlarm', require('./routes/weatherAlarm'));
@@ -460,6 +471,9 @@ router.get('/dpu/wlfw/news/:type?', require('./routes/universities/dpu/wlfw/news
 
 // 东南大学
 router.get('/seu/radio/academic', require('./routes/universities/seu/radio/academic'));
+
+// 哈尔滨工业大学
+router.get('/hit/jwc', require('./routes/universities/hit/jwc'));
 
 // 上海科技大学
 router.get('/shanghaitech/sist/activity', require('./routes/universities/shanghaitech/sist/activity'));
@@ -493,6 +507,22 @@ router.get('/cas/sim/academic', require('./routes/universities/cas/sim/academic'
 // 南京邮电大学
 router.get('/njupt/jwc/:type?', require('./routes/universities/njupt/jwc'));
 
+// 南昌航空大学
+router.get('/nchu/jwc/:type?', require('./routes/universities/nchu/jwc'));
+
+// 哈尔滨工程大学
+router.get('/heu/ugs/news/:author?/:category?', require('./routes/universities/heu/ugs/news'));
+
+// 重庆大学
+router.get('/cqu/jwc/announcement', require('./routes/universities/cqu/jwc/announcement'));
+
+// 成都信息工程大学
+router.get('/cuit/cxxww/:type?', require('./routes/universities/cuit/cxxww'));
+
+// 重庆科技学院
+router.get('/cqust/jw/:type?', require('./routes/universities/cqust/jw'));
+router.get('/cqust/lib/:type?', require('./routes/universities/cqust/lib'));
+
 // ifanr
 router.get('/ifanr/appso', require('./routes/ifanr/appso'));
 
@@ -505,5 +535,23 @@ router.get('/zaobao/znews/:type?', require('./routes/zaobao/znews'));
 
 // Apple
 router.get('/apple/exchange_repair', require('./routes/apple/exchange_repair'));
+
+// Minecraft CurseForge
+router.get('/curseforge/files/:project', require('./routes/curseforge/files'));
+
+// 抖音
+router.get('/douyin/user/:id', require('./routes/douyin/user'));
+
+// 少数派 sspai
+router.get('/sspai/series', require('./routes/sspai/series'));
+
+// xclient.info
+router.get('/xclient/app/:name', require('./routes/xclient/app'));
+
+// 中国驻外使领事馆
+router.get('/embassy/:country/:city?', require('./routes/embassy/index'));
+
+// 澎湃新闻
+router.get('/thepaper/featured', require('./routes/thepaper/featured'));
 
 module.exports = router;
