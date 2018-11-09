@@ -236,6 +236,8 @@ Bot initialization required: Add Telegram Bot [@RSSHub_bot](https://t.me/RSSHub_
 
 </routeEN>
 
+<routeEn name="Sticker Pack" author="DIYgod" example="/telegram/stickerpack/DIYgod" path="/telegram/stickerpack/:name" :paramsDesc="['Sticker Pack name, available in the sharing URL']"/>
+
 ## Travel
 
 ### All the Flight Deals
@@ -289,6 +291,7 @@ GitHub provides some official RSS feeds:
 -   Repo releases: https://github.com/:owner/:repo/releases.atom
 -   Repo commits: https://github.com/:owner/:repo/commits.atom
 -   User activities: https://github.com/:user.atom
+-   Private feed: https://github.com/:user.private.atom?token=:secret (You can find **Subscribe to your news feed** in [dashboard](https://github.com) page after login)
 
 :::
 
@@ -311,6 +314,12 @@ GitHub provides some official RSS feeds:
 | trending | starred    | all |
 
 </routeEn>
+
+## Parcel Tracking
+
+### Hermes
+
+<routeEn name="Hermes UK" author="HenryQW" example="/parcel/hermesuk/[tracking number]" path="/parcel/hermesuk/:tracking" :paramsDesc="['Tracking number']"/>
 
 ## Uncategorized
 
@@ -363,3 +372,20 @@ Google Scholar has strict anti-crawling mechanism implemented, the demo below do
 Provides a better reading experience (full text articles) over the official one.
 
 </routeEn>
+
+### 99% Invisible
+
+<routeEn name="Transcript" author="Ji4n1ng" example="/99percentinvisible/transcript" path="/99percentinvisible/transcript"/>
+
+### AutoTrader
+
+<routeEn name="Search" author="HenryQW" example="/autotrader/radius=50&postcode=sw1a1aa&onesearchad=Used&onesearchad=Nearly%20New&onesearchad=New&price-to=9000&year-from=2012&body-type=Hatchback&transmission=Automatic&exclude-writeoff-categories=on" path="/autotrader/:query" :paramsDesc="['the search query']">
+
+1. Conduct a search with desired filters on AutoTrader
+1. Copy everything in the URL after `?`, for example: `https://www.autotrader.co.uk/car-search?radius=50&postcode=sw1a1aa&onesearchad=Used&onesearchad=Nearly%20New&onesearchad=New&price-to=9000&year-from=2012&body-type=Hatchback&transmission=Automatic&exclude-writeoff-categories=on` will produce `radius=50&postcode=sw1a1aa&onesearchad=Used&onesearchad=Nearly%20New&onesearchad=New&price-to=9000&year-from=2012&body-type=Hatchback&transmission=Automatic&exclude-writeoff-categories=on`
+
+</routeEn>
+
+### United Nations
+
+<routeEn name="Security Council Vetoed a Resolution" author="HenryQW" example="/un/scveto" path="/un/scveto"/>
