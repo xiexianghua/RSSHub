@@ -1,7 +1,4 @@
 const config = require('./config');
-if (config.newrelicLicenseKey) {
-    require('newrelic');
-}
 const Koa = require('koa');
 const fs = require('fs');
 const logger = require('./utils/logger');
@@ -97,6 +94,25 @@ if (config.cacheType === 'memory') {
         set: () => null,
     };
 }
+app.context.cache.tryGet = async function(key, getValueFunc, maxAge = 24 * 60 * 60) {
+    let v = await this.get(key);
+    if (!v) {
+        v = await getValueFunc();
+        this.set(key, v, maxAge);
+    } else {
+        let parsed;
+        try {
+            parsed = JSON.parse(v);
+        } catch (e) {
+            parsed = null;
+        }
+        if (parsed) {
+            v = parsed;
+        }
+    }
+
+    return v;
+};
 
 // router
 

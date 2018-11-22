@@ -14,7 +14,7 @@ module.exports = function(options = {}) {
         ignoreQuery = false,
     } = options;
 
-    const memoryCache = lru({
+    const memoryCache = new lru({
         maxAge: expire * 1000,
         max: maxLength,
     });
@@ -22,11 +22,11 @@ module.exports = function(options = {}) {
     options.app.context.cache = {
         get: (key) => {
             if (key) {
-                memoryCache.get(key);
+                return memoryCache.get(key);
             }
         },
         set: (key, value, maxAge) => {
-            if (!value) {
+            if (!value || value === 'undefined') {
                 value = '';
             }
             if (typeof value === 'object') {

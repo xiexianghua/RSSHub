@@ -43,11 +43,11 @@ module.exports = function(options = {}) {
     options.app.context.cache = {
         get: async (key) => {
             if (key) {
-                await redisClient.get(key);
+                return await redisClient.get(key);
             }
         },
         set: async (key, value, maxAge) => {
-            if (!value) {
+            if (!value || value === 'undefined') {
                 value = '';
             }
             if (typeof value === 'object') {
