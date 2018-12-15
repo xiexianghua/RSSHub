@@ -15,8 +15,8 @@ RSSHub is a lightweight and extensible RSS feed aggregator, it's able to generat
 
 ### Special Sponsors
 
-| <a href="https://rixcloud.app/rsshub" target="_blank"><img width="240px" src="https://i.imgur.com/qRP0eMg.png"></a> | <a href="https://werss.app?utm_source=rsshub" target="_blank"><img width="170px" src="https://cdn.weapp.design/werss/werss-logo.png"></a> | <a href="https://j.youzan.com/ccPcrY" target="_blank"><img width="180px" src="https://i.imgur.com/FZtFAGz.png"></a> |
-| :-----------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
+| <a href="https://rixcloud.app/rsshub" target="_blank"><img width="240px" src="https://i.imgur.com/qRP0eMg.png"></a> | <a href="https://werss.app?utm_source=rsshub" target="_blank"><img width="170px" src="https://cdn.weapp.design/werss/werss-logo.png"></a> |
+| :-----------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
 
 
 ### Sponsors
@@ -210,6 +210,8 @@ If no matching results were found, the server returns only a HTTP status code `2
 ### Twitter
 
 <routeEn name="User" path="/twitter/user/:id" example="/twitter/user/DIYgod" :paramsDesc="['twitter handler']" />
+
+<routeEn name="List" author="xyqfer" example="/twitter/list/ladyleet/javascript" path="/twitter/list/:id/:name" :paramsDesc="['user name', 'list name']"/>
 
 ### Instagram
 
