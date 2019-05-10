@@ -1,4 +1,4 @@
-# 待分类
+# 其他
 
 ## 自如
 
@@ -152,6 +152,13 @@
 <Route name="Shortcuts Gallery" author="Andiedie" example="/sspai/shortcuts" path="/sspai/shortcuts" />
 
 <Route name="Matrix" author="feigaoxyz" example="/sspai/matrix" path="/sspai/matrix" />
+
+<Route name="专栏" author="LogicJake" example="/sspai/column/104" path="/sspai/column/:id"  :paramsDesc="['专栏 id']"/>
+
+## 异次元软件世界
+
+<Route name="首页" author="kimi360" example="/iplay/home" path="/iplay/home">
+</Route>
 
 ## 趣头条
 
@@ -329,6 +336,8 @@ board 和 build 可在[这里](http://api.ineal.me/tss/status)查看
 
 <Route name="作者" author="xyqfer" example="/cyzone/author/1225562" path="/cyzone/author/:id" :paramsDesc="['作者 id']"/>
 
+<Route name="标签" author="LogicJake" example="/cyzone/label/创业邦周报" path="/cyzone/label/:name" :paramsDesc="['标签名称']"/>
+
 ## 惠誉评级
 
 <Route name="板块信息" author="LogicJake" example="/fitchratings/site/economics" path="/fitchratings/site/:type" :paramsDesc="['板块名称，在网址 site 后面']"/>
@@ -418,7 +427,7 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 ## 播客 IBC 岩手放送｜ IBC ラジオ　イヤーマイッタマイッタ
 
-<Route name="IBC岩手放送｜IBCラジオ　イヤーマイッタマイッタ" author="fengkx" example="/maitta" path="/maitta" />
+<Route name="IBC岩手放送｜IBCラジオ　イヤーマイッタマイッタ" author="fengkx" example="/maitta" path="/maitta" supportPodcast="1" />
 
 ## 博客: 敬维
 
@@ -464,22 +473,88 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 <Route name="话题" author="brilon" example="/infoq/topic/1" path="/infoq/topic/:id" :paramsDesc="['话题id，可在[InfoQ全部话题](https://www.infoq.cn/topics)页面找到URL里的话题id']" />
 
-### 艾瑞
+## 艾瑞
 
 <route name="产业研究报告" author="brilon" example="/iresearch/report" path="/iresearch/report"/>
 
-### ZAKER
+## ZAKER
 
 <Route name="source" author="LogicJake" example="/zaker/source/12291" path="/zaker/source/:id" :paramsDesc="['source id，可在 URL 中找到']"/>
 
-### MobData
+## MobData
 
 <route name="分析报告" author="brilon" example="/mobdata/report" path="/mobdata/report"/>
 
-### 腾讯谷雨
+## 腾讯谷雨
 
 <Route name="栏目" author="LogicJake" example="/tencent/guyu/channel/lab" path="/tencent/guyu/channel/:name" :paramsDesc="['栏目名称，包括lab，report，story，shalong']"/>
 
-### checkee.info
+## checkee.info
 
 <Route name="美国签证 check 动态" author="lalxyy" example="/checkee/2019-03" path="/checkee/:month" :paramsDesc="['签证被 check 的年份-月份，如 2019-03']" />
+
+## 古诗文网
+
+<Route name="首页推荐" author="LogicJake" example="/gushiwen/recommend" path="/gushiwen/recommend"/>
+
+## 电商在线
+
+<Route name="电商在线" author="LogicJake" example="/imaijia/category/xls" path="/imaijia/category/:category" :paramsDesc="['类别id，可在 URL 中找到']" />
+
+## 马良行
+
+<Route name="马良行" author="junfengP" example="/mlhang" path="/mlhang" />
+
+## 世界卫生组织
+
+<Route name="媒体中心" author="LogicJake" example="/who/news-room/feature-stories" path="/who/news-room/:type" :paramsDesc="['类别，可在 URL 中找到']"/>
+
+## 福利资源-met.red
+
+<Route name="福利资源-met.red" author="junfengP" example="/metred/fuli" path="/metred/fuli" />
+
+## 毕马威
+
+<Route name="洞察" author="LogicJake" example="/kpmg/insights" path="/kpmg/insights" />
+
+## 7x24 小时快讯
+
+<Route name="7x24小时快讯" author="occupy5" example="/fx678/kx" path="/fx678/kx" />
+
+## gradCafe
+
+<Route name="gradCafe result" author="liecn" example="/gradcafe/result" path="/gradcafe/result" />
+
+<Route name="gradCafe result by key words" author="liecn" example="/gradcafe/result/computer" path="/gradcafe/result/:type" :paramsDesc="['按关键词进行搜索，如 computer']"/>
+
+## 且听风吟福利
+
+<Route name="分类" author="qiwihui" example="/qtfyfl/guoji" path="/qtfyfl/:category" :paramsDesc="['分类，可在 URL 中找到']">
+
+| 最新文章 | 福利社  | 求出处    | 套图集  | 门事件     | 内涵图   | 电影下载       | 影视资讯 |
+| -------- | ------- | --------- | ------- | ---------- | -------- | -------------- | -------- |
+| latest   | fulishe | qiuchuchu | taotuji | menshijian | neihantu | dianyingxiazai | yingshi  |
+
+| 电视剧下载 | 动漫下载 | 电影彩蛋 | 影视剧情 | 涨姿势     | 娱乐 | 明星八卦 | 音乐歌曲 |
+| ---------- | -------- | -------- | -------- | ---------- | ---- | -------- | -------- |
+| dianshiju  | dongman  | caidan   | juqing   | zhangzishi | yule | mingxing | music    |
+
+| 游戏  | 电脑软件 | 实时热点     | 心灵鸡汤 | 符号大全 | 国际新闻 | 科技苑 | 其他  |
+| ----- | -------- | ------------ | -------- | -------- | -------- | ------ | ----- |
+| games | software | shishiredian | xljt     | fhdq     | xljt     | tech   | other |
+
+</Route>
+
+## 派代
+
+<Route name="首页" author="qiwihui" example="/paidai" path="/paidao" />
+<Route name="论坛" author="qiwihui" example="/paidai/bbs" path="/paidao/bbs" />
+<Route name="商道" author="qiwihui" example="/paidai/news" path="/paidao/news" />
+
+## 财新博客
+
+<Route name="用户博客" author="Maecenas" example="/caixin/blog/zhangwuchang" path="/caixin/blog/:column" :paramsDesc="['博客名称，可在博客主页的 URL 找到']">
+
+通过提取文章全文，以提供比官方源更佳的阅读体验.
+
+</Route>

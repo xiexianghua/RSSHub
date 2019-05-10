@@ -1,12 +1,16 @@
 # 大学通知
 
+## 北京理工大学
+
+<Route name="教务处通知" author="sinofp" example="/bit/jwc" path="/universities/bit/jwc" />
+
+<Route name="计院通知" author="sinofp" example="/bit/cs" path="/universities/bit/cs" />
+
 ## 上海海事大学
 
-<Route name="学术讲座" author="simonsmh" example="/shmtu/events" path="/universities/shmtu/events"/>
+<Route name="官网信息" author="simonsmh" example="/shmtu/www/events" path="/shmtu/www/:type" :paramsDesc="['events 为学术讲座, notes 为通知公告']"/>
 
-<Route name="通知公告" author="simonsmh" example="/shmtu/notes" path="/universities/shmtu/notes"/>
-
-<Route name="教务信息" author="simonsmh" example="/shmtu/jwc/1" path="/universities/shmtu/jwc/:type" :paramsDesc="['1 为教务新闻, 2 为教务公告']"/>
+<Route name="教务信息" author="simonsmh" example="/shmtu/jwc/jiaowugonggao" path="/shmtu/jwc/:type" :paramsDesc="['jiaowuxinwen 为教务新闻, jiaowugonggao 为教务公告']"/>
 
 ## 西南科技大学
 
@@ -135,15 +139,13 @@
 
 <Route name="电子信息与电气工程学院学术动态" author="HenryQW" example="/sjtu/seiee/academic" path="/universities/sjtu/seiee/academic"/>
 
-<Route name="电子信息与电气工程学院本科教务办 -- 分专业" author="SkyZH" example="/sjtu/seiee/bjwb/major_select" path="/universities/sjtu/seiee/bjwb/major_select"/>
+<Route name="电子信息与电气工程学院本科教务办" author="Polynomia" example="/sjtu/seiee/xsb/news" path="/universities/sjtu/seiee/bjwb/:type" :paramsDesc="['无默认选项']">
 
-<Route name="电子信息与电气工程学院本科教务办 -- 转专业" author="SkyZH" example="/sjtu/seiee/bjwb/major_transfer" path="/universities/sjtu/seiee/bjwb/major_transfer"/>
+| 分专业       | 转专业         | 直升研究生   | 交换交流 | 国际办学      |
+| ------------ | -------------- | ------------ | -------- | ------------- |
+| major_select | major_transfer | postgraduate | abroad   | international |
 
-<Route name="电子信息与电气工程学院本科教务办 -- 交换交流" author="SkyZH" example="/sjtu/seiee/bjwb/abroad" path="/universities/sjtu/seiee/bjwb/abroad"/>
-
-<Route name="电子信息与电气工程学院本科教务办 -- 直升研究生" author="SkyZH" example="/sjtu/seiee/bjwb/postgraduate" path="/universities/sjtu/seiee/bjwb/postgraduate"/>
-
-<Route name="电子信息与电气工程学院本科教务办 -- 国际办学" author="SkyZH" example="/sjtu/seiee/bjwb/international" path="/universities/sjtu/seiee/bjwb/international"/>
+</Route>
 
 <Route name="研究生通知公告" author="mzr1996" example="/sjtu/gs/tzgg/pyxx" path="/universities/sjtu/gs/tzgg/:type?" :paramsDesc="['默认列举所有通知公告']">
 
@@ -164,6 +166,16 @@
 ## 中国科学院
 
 <Route name="上海微系统与信息技术研究所学术活动" author="HenryQW" example="/cas/sim/academic" path="/universities/cas/sim/academic"/>
+
+## 北京邮电大学
+
+<Route name="硕士研究生招生通知" author="ihewro" example="/bupt/yz/int" path="/bupt/yzwf/:type" :paramsDesc="['学院英文缩写']">
+
+| 综合 | 信息与通信工程学院 | 电子工程学院 | 计算机学院 | 自动化学院 | 软件学院 | 数字媒体与设计艺术学院 | 网络空间安全学院 | 理学院 | 经济管理学院 | 人文学院 | 马克思主义学院 | 网络技术研究院 | 信息光子学与光通信研究院 |
+| ---- | ------------------ | ------------ | ---------- | ---------- | -------- | ---------------------- | ---------------- | ------ | ------------ | -------- | -------------- | -------------- | ------------------------ |
+| all  | sice               | see          | scs        | sa         | sse      | sdmda                  | scss             | sci    | sem          | sh       | mtri           | int            | ipoc                     |
+
+</Route>
 
 ## 南京邮电大学
 
@@ -679,6 +691,10 @@ https://rsshub.app/**nuist**/`bulletin` 或 https://rsshub.app/**nuist**/`bullet
 
 </Route>
 
+## 中国传媒大学
+
+<Route name="中国传媒大学研究生招生网" author="YunYouJun" example="/cuc/yz" path="/cuc/yz" />
+
 ## 北京科技大学天津学院
 
 <Route name="北京科技大学天津学院" author="henbf" example="/ustb/tj/news/all" path="/universities/ustb/tj/news/:type" :paramsDesc="['默认为 `all`']">
@@ -688,3 +704,25 @@ https://rsshub.app/**nuist**/`bulletin` 或 https://rsshub.app/**nuist**/`bullet
 | all  | xyxw     | xshhd    | csjsxy       | xxgcxy       | jjx      | glxy     | clx    | jxgcx      | hlx    | flx    | wyx    | ysx    |
 
 </Route>
+
+## 广东海洋大学
+
+<Route name="广东海洋大学" author="Xiaotouming" example="/gdoujwc" path="/gdoujwc"/>
+
+## 深圳大学
+
+<Route name="深圳大学研究生招生网" author="NagaruZ" example="/szu/yz/1" path="/universities/szu/yz/:type?" :paramsDesc="['默认为1']" >
+
+| 研究生 | 博士生 |
+| ------ | ------ |
+| 1      | 2      |
+
+</Route>
+
+## MIT
+
+<Route name="MIT graduateadmissions's all blogs" author="LogicJake" example="/mit/graduateadmissions/index/all" path="/universities/mit/graduateadmissions/index/all"/>
+
+<Route name="MIT graduateadmissions's blogs by department" author="LogicJake" example="/mit/graduateadmissions/department/eecs" path="/universities/mit/graduateadmissions/department/:name" :paramsDesc="['department name which can be found in url']"/>
+
+<Route name="MIT graduateadmissions's blogs by category" author="LogicJake" example="/mit/graduateadmissions/category/beyond-the-lab" path="/universities/mit/graduateadmissions/category/:name" :paramsDesc="['category name which can be found in url']"/>

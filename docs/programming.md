@@ -44,6 +44,12 @@
 
 <Route name="专栏" author="Maecenas" example="/juejin/posts/56852b2460b2a099cdc1d133" path="/juejin/posts/:id" :paramsDesc="['用户 id, 可在用户页 URL 中找到']"/>
 
+<Route name="收藏集" author="isQ" example="/juejin/collections/5791879979bc440066171bdb" path="/juejin/collections/:userId" :paramsDesc="['用户唯一标志符, 在浏览器地址栏URL中能够找到']"/>
+
+<Route name="单个收藏夹" author="isQ" example="/juejin/collection/5cbf079df265da03462270f9" path="/juejin/collection/:collectionId" :paramsDesc="['收藏夹唯一标志符, 在浏览器地址栏URL中能够找到']"/>
+
+<Route name="分享" author="qiwihui" example="/juejin/shares/56852b2460b2a099cdc1d133" path="/juejin/shares/:userId" :paramsDesc="['用户 id, 可在用户页 URL 中找到']"/>
+
 ## Dockone
 
 <Route name="周报" author="csi0n" example="/dockone/weekly" path="/dockone/weekly"/>
@@ -89,6 +95,23 @@ GitHub 官方也提供了一些 RSS:
 
 <Route name="仓库 Stars" author="HenryQW" example="/github/stars/DIYgod/RSSHub" path="/github/stars/:user/:repo" :paramsDesc="['用户名', '仓库名']"/>
 
+<Route name="仓库 Branches" author="max-arnold" example="/github/branches/DIYgod/RSSHub" path="/github/branches/:user/:repo" :paramsDesc="['用户名', '仓库名']"/>
+
+<Route name="文件 Commits" author="zengxs" example="/github/file/DIYgod/RSSHub/master/lib/router.js" path="/github/file/:user/:repo/:branch/:filepath+" :paramsDesc="['用户名', '仓库名', '分支名', '文件路径']">
+
+| 用户名   | 仓库名   | 分支名   | 文件路径        |
+| -------- | -------- | -------- | --------------- |
+| `DIYgod` | `RSSHub` | `master` | `lib/router.js` |
+
+> -   **分支名**中如果有 `/` 等特殊字符需使用 urlencode 进行编码，通常 `/` 需要被替换成 `%2f`
+> -   **文件路径**中如果有特殊字符同样需使用 urlencode 进行编码，但文件路径可以正常识别 `/` 字符
+> -   **文件路径**如果以 `.rss`, `.atom`, `.json` 结尾，需要将后缀中的 `.` 替换成 `%2e`
+>     > Reeder 订阅 `%2erss` 或类似后缀的时候会出错，此时再在路由后面加上 `.rss` 即可正常订阅
+>     >
+>     > 如： `https://rsshub.app/github/file/DIYgod/RSSHub/master/lib/router%2ejs` 替换成 `https://rsshub.app/github/file/DIYgod/RSSHub/master/lib/router%2ejs.rss` 即可
+
+</Route>
+
 <Route name="搜索结果" author="LogicJake" example="/github/search/RSSHub/bestmatch/desc" path="/github/search/:query/:sort?/:order?" :paramsDesc="['搜索关键词', '排序选项（默认为bestmatch）','排序顺序，desc和asc（默认desc降序）']"/>
 
 | 排序选项           | sort      |
@@ -100,7 +123,22 @@ GitHub 官方也提供了一些 RSS:
 
 ## 开源中国
 
-<Route name="资讯" author="tgly307" example="/oschina/news" path="/oschina/news"/>
+<Route name="资讯" author="tgly307 zengxs" example="/oschina/news/project" path="/oschina/news/:category?" :paramsDesc="['板块名']">
+
+| [综合资讯][osc_gen] | [软件更新资讯][osc_proj] | [行业资讯][osc_ind] | [编程语言资讯][osc_pl] |
+| ------------------- | ------------------------ | ------------------- | ---------------------- |
+| industry            | project                  | industry-news       | programming            |
+
+订阅[全部板块资讯][osc_all]可以使用 <https://rsshub.app/oschina/news>
+
+[osc_all]: https://www.oschina.net/news '开源中国-全部资讯'
+[osc_gen]: https://www.oschina.net/news/industry '开源中国-综合资讯'
+[osc_proj]: https://www.oschina.net/news/project '开源中国-软件更新资讯'
+[osc_ind]: https://www.oschina.net/news/industry-news '开源中国-行业资讯'
+[osc_pl]: https://www.oschina.net/news/programming '开源中国-编程语言资讯'
+
+</Route>
+
 <Route name="用户博客" author="dxmpalb" example="/oschina/user/xxiaobian" path="/oschina/user/:id" :paramsDesc="['用户 id, 可通过查看用户博客网址得到，如果博客以 u/数字结尾，使用下一条路由']">
 
 | 小小编辑  |
@@ -129,8 +167,10 @@ GitHub 官方也提供了一些 RSS:
 ## 极客时间
 
 <Route name="专栏文章" author="fengchang" example="/geektime/column/48" path="/geektime/column/:cid" :paramsDesc="['专栏 id, 可从[全部专栏](https://time.geekbang.org/paid-content)进入专栏介绍页, 在 URL 中找到']"/>
+<Route name="极客新闻" author="zhangzhxb520" example="/geektime/news" path="/geektime/news"/>
 
-> 极客时间专栏需要付费订阅, RSS 仅做更新提醒, 不含付费内容.
+> -   极客时间专栏需要付费订阅, RSS 仅做更新提醒, 不含付费内容.
+> -   极客新闻不需要付费,可通过 RSS 订阅.
 
 ## 安全客
 

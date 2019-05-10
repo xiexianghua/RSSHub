@@ -26,6 +26,10 @@
 
 <Route name="文章" author="DIYgod" example="/mmgal" path="/mmgal"/>
 
+## say 花火
+
+<Route name="文章" author="junfengP" example="/sayhuahuo" path="/sayhuahuo"/>
+
 ## 终点分享
 
 <Route name="最新汉化" author="junfengP" example="/zdfx" path="/zdfx"/>
@@ -37,6 +41,10 @@
 ## 動畫狂
 
 <Route name="漫画更新" author="KellyHwong" path="/cartoonmad/comic/:id" example="/cartoonmad/comic/5827" :paramsDesc="['漫画ID']"/>
+
+## 咚漫
+
+<Route name="漫画更新" author="Machsix" path="/dongmanmanhua/comic/:category/:name/:id" example="/dongmanmanhua/comic/COMEDY/xin-xinlingdeshengyin/381" :paramsDesc="['类别','名称','ID']"/>
 
 ## Anime1
 
@@ -81,3 +89,11 @@
 ## Anitama
 
 <Route name="Anitama Channel" author="ranpox" path="/anitama/:channel?" example="/anitama" :paramsDesc="['频道id，从频道的地址栏中查看']"/>
+
+## 鼠绘漫画
+
+<Route name="鼠绘漫画" author="zytomorrow" path="/shuhui/comics/:id" example="/shuhui/comics/1" :paramsDesc="['漫画id，漫画主页的地址栏中最后一位数字']"/>
+
+## 嘀哩嘀哩-dilidili
+
+<Route name="嘀哩嘀哩番剧更新" author="SunShinenny" path="/dilidili/fanju/:id?" example="/dilidili/fanju/onepunchman2" :paramsDesc="['番剧id，打开对应番剧,从url中最后一位查看']"/>
