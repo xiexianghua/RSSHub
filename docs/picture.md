@@ -4,6 +4,12 @@ pageClass: routes
 
 # 图片
 
+## 1X
+
+### Magazine
+
+<Route author="emdoe" example="/1x/magazine" path="/1x/magazine"/>
+
 ## Awesome Pigtails
 
 ### 最新图片
@@ -14,7 +20,7 @@ pageClass: routes
 
 ### 每日壁纸
 
-<Route author="FHYunCai" example="/bing" path="/bing"/>
+<Route author="FHYunCai" example="/bing" path="/bing" radar="1"/>
 
 ## CNU 视觉联盟
 

@@ -104,6 +104,14 @@ pageClass: routes
 
 <Route author="RicardoMing" example="/bupt/grs" path="/bupt/grs" />
 
+### 信息门户
+
+<Route author="RicardoMing wzekin" example="/bupt/portal" path="/bupt/portal" />
+
+### 校园新闻
+
+<Route author="wzekin" example="/bupt/news" path="/bupt/news" />
+
 ## 常州大学
 
 ### 教务处
@@ -257,11 +265,13 @@ xskb1 对应 http://www.auto.uestc.edu.cn/index/xskb1.htm
 
 ### 东南大学计算机技术与工程学院
 
-<Route author="LogicJake" example="/seu/cse/xyxw" path="/universities/seu/cse/:type?" :paramsDesc="['分类名(默认为xyxw)']"/>
+<Route author="LogicJake" example="/seu/cse/xyxw" path="/universities/seu/cse/:type?" :paramsDesc="['分类名(默认为xyxw)']">
 
 | 学院新闻 | 通知公告 | 教务信息 | 就业信息 | 学工事务 |
 | -------- | -------- | -------- | -------- | -------- |
 | xyxw     | tzgg     | jwxx     | jyxx     | xgsw     |
+
+</Route>
 
 ## 广东工业大学
 
@@ -274,6 +284,20 @@ xskb1 对应 http://www.auto.uestc.edu.cn/index/xskb1.htm
 ### 广东海洋大学
 
 <Route author="Xiaotouming" example="/gdoujwc" path="/gdoujwc"/>
+
+## 桂林电子科技大学
+
+### 新闻资讯
+
+<Route author="cssxsh" example="/guet/xwzx/xykx" path="/guet/xwzx/:type" :paramsDesc="['资讯类型，如下表']">
+
+| 桂电要闻 | 文明校园建设 | 桂电新闻 | 校园快讯 | 学院动态 | 媒体桂电 | 通知公告 | 招标公示 | 学术活动 |
+| -------- | ------------ | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| gdyw     | wmxyjs       | gdxw     | xykx     | xydt     | mtgd     | tzgg     | zbgs     | xshd     |
+
+注 1: 不要吐槽拼音缩写，缩写原本的 URL 构成就这样。
+
+</Route>
 
 ## 哈尔滨工程大学
 
@@ -410,6 +434,12 @@ category 列表：
 
 <Route author="RayHY" example="/hust/aia/news" path="/universities/hust/aia/news" />
 
+## 华中师范大学
+
+### 就业信息
+
+<Route author="jackyu1996" example="/ccnu/career" path="/universities/ccnu/career" />
+
 ## 江南大学
 
 ### 教务处通知
@@ -425,6 +455,12 @@ category 列表：
 | 实践创新 | 学科竞赛 | 研究生助教 | 教学改革 | 专业建设 | 课程建设 | 教材建设 | 教学成果 | 学术报告 |
 
 </Route>
+
+## 井冈山大学
+
+### 教务处通知
+
+<Route author="butten42" example="/jgsu/jwc" path="/universities/jgsu/jwc" />
 
 ## 昆明理工大学
 
@@ -500,29 +536,33 @@ category 列表：
 
 ### 教务通知
 
-<Route author="arcosx" example="/nuaa/jwc/all" path="/universities/nuaa/jwc/:type" :paramsDesc="['分类名']">
+<Route author="arcosx Seiry" example="/nuaa/jwc/default" path="/universities/nuaa/jwc/:type" :paramsDesc="['分类名']">
 
-| 全部 | 教学服务 | 教学建设 | 学生培养 | 教学资源 |
-| ---- | -------- | -------- | -------- | -------- |
-| all  | jxfw     | jxjs     | xspy     | jxzy     |
+| 教学服务      | 教学建设 | 学生培养 | 教学资源 |
+| ------------- | -------- | -------- | -------- |
+| jxfw(default) | jxjs     | xspy     | jxzy     |
 
 </Route>
 
 ### 计算机科学与技术学院
 
-<Route author="LogicJake" example="/nuaa/cs/kydt" path="/universities/nuaa/cs/:type?" :paramsDesc="['分类名']"/>
+<Route author="LogicJake Seiry" example="/nuaa/cs/kydt" path="/universities/nuaa/cs/:type?" :paramsDesc="['分类名']"/>
 
 | 通知公告 | 新闻动态 | 科研动态 | 教学动态 | 学生工作 | 招生信息 | 就业信息 |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
 | tzgg     | xwdt     | kydt     | jxdt     | xsgz     | zsxx     | jyxx     |
 
+</Route>
+
 ### 研究生院
 
-<Route author="junfengP" example="/nuaa/yjsy/latest" path="/universities/nuaa/yjsy/:type?" :paramsDesc="['分类名']"/>
+<Route author="junfengP Seiry" example="/nuaa/yjsy/latest" path="/universities/nuaa/yjsy/:type?" :paramsDesc="['分类名']"/>
 
 | 最近动态 | 研院新闻 | 上级文件 | 管理文件 | 信息服务 |
 | -------- | -------- | -------- | -------- | -------- |
 | latest   | yyxw     | sjwj     | glwj     | xxfw     |
+
+</Route>
 
 ## 南京理工大学
 
@@ -1024,6 +1064,28 @@ https://rsshub.app/**nuist**/`bulletin` 或 https://rsshub.app/**nuist**/`bullet
 ### 上海微系统与信息技术研究所学术活动
 
 <Route author="HenryQW" example="/cas/sim/academic" path="/universities/cas/sim/academic"/>
+
+## 中国石油大学（华东）
+
+### 主页
+
+<Route author="Veagau" example="/upc/main" path="/upc/main/:type" :paramsDesc="['分类, 见下表']">
+
+| 通知公告 | 学术动态 |
+| -------- | -------- |
+| notice   | scholar  |
+
+</Route>
+
+### 计算机科学与技术学院
+
+<Route author="Veagau" example="/upc/jsj" path="/upc/jsj/:type" :paramsDesc="['分类, 见下表']">
+
+| 学院新闻 | 学术关注 | 学工动态 | 通知公告 |
+| -------- | -------- | -------- | -------- |
+| news     | scholar  | states   | notice   |
+
+</Route>
 
 ## 中国药科大学
 
