@@ -14,6 +14,12 @@ pageClass: routes
 
 <Route author="HenryQW" example="/dcard/funny/popular" path="/dcard/:section/:type?" :paramsDesc="['板塊名稱，URL 中獲得', '排序，popular 熱門；latest 最新，默認為 latest']" radar="1"/>
 
+## Discuz
+
+### 通用子版块
+
+<Route author="junfengP" example="/discuz/http%3a%2f%2fwww.u-share.cn%2fforum.php%3fmod%3dforumdisplay%26fid%3d56" path="/discuz/:link" :paramsDesc="['子版块链接， 需要手动Url编码']"/>
+
 ## MCBBS
 
 ### 版块
@@ -28,7 +34,7 @@ pageClass: routes
 
 ### 分区帖子
 
-<Route author="xyqfer" example="/nga/forum/489" path="/nga/forum/:fid"  :paramsDesc="['分区 id, 可在分区主页 URL 找到']" radar="1"/>
+<Route author="xyqfer" example="/nga/forum/489" path="/nga/forum/:fid/:recommend?"  :paramsDesc="['分区 id, 可在分区主页 URL 找到','是否只显示精华主题, 留空为否, 任意值为是']" radar="1"/>
 
 ### 帖子
 
@@ -53,6 +59,12 @@ pageClass: routes
 ### 帖子
 
 <Route author="kt286" example="/v2ex/post/584403" path="/v2ex/post/:postid" :paramsDesc="['帖子ID，在 URL 可以找到']"/>
+
+## 电鸭社区
+
+### 工作机会
+
+<Route author="sfyumi" example="/eleduck/jobs" path="/eleduck/jobs"/>
 
 ## 虎扑
 
@@ -174,6 +186,21 @@ pageClass: routes
 ### 回帖
 
 <Route author="Maecenas" example="/1point3acres/user/1/posts" path="/1point3acres/user/:id/posts" :paramsDesc="['用户 id，可在 Instant 版网站的个人主页 URL 找到']"/>
+
+### 录取结果
+
+<Route author="NavePnow" example="/1point3acres/offer/12/null/CMU" path="/1point3acres/offer/:year?/:major?/:school?" :paramsDesc="['录取年份  id，空为null', '录取专业 id，空为null', '录取学校 id，空为null']">
+::: warning 三个 id 获取方式
+
+1. 打开 https://offer.1point3acres.com
+2. 打开控制台
+3. 切换到 Network 面板
+4. 点击 搜索 按钮
+5. 点击 results?ps=15&pg=1 POST 请求
+6. 找到 Request Payload 请求参数，例如 filters: {planyr: "13", planmajor: "1", outname_w: "ACADIAU"} ，则三个 id 分别为: 13,1,ACADIAU
+
+:::
+</Route>
 
 ## 直播吧
 

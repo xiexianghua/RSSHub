@@ -43,22 +43,6 @@ pageClass: routes
 
 <Route author="ntzyz" example="/dhl/12345678" path="/dhl/:shipment_id" :paramsDesc="['运单号']"/>
 
-## Google Doodles
-
-### 更新
-
-<Route author="xyqfer" example="/google/doodles/zh-CN" path="/google/doodles/:language?" :paramsDesc="['语言，默认为`zh-CN`简体中文，如需其他语言值可从[Google Doodles 官网](https://www.google.com/doodles)获取']" />
-
-## gradCafe
-
-### gradCafe result
-
-<Route author="liecn" example="/gradcafe/result" path="/gradcafe/result" />
-
-### gradCafe result by key words
-
-<Route author="liecn" example="/gradcafe/result/computer" path="/gradcafe/result/:type" :paramsDesc="['按关键词进行搜索，如 computer']"/>
-
 ## Instapaper
 
 ### 个人分享
@@ -95,11 +79,26 @@ pageClass: routes
 
 <Route author="fengkx" example="/one" path="/one"/>
 
+## Parcel Tracking
+
+### Hermes UK
+
+<Route author="HenryQW" example="/parcel/hermesuk/[tracking number]" path="/parcel/hermesuk/:tracking" :paramsDesc="['Tracking number']"/>
+
 ## Pocket
 
 ### Trending
 
 <Route author="hoilc" example="/pocket/trending" path="/pocket/trending"/>
+
+## Product Hunt
+
+> 官方 Feed 地址为: [https://www.producthunt.com/feed](https://www.producthunt.com/feed)
+
+### Today Popular
+
+<Route author="miaoyafeng" example="/producthunt/today" path="/producthunt/today">
+</Route>
 
 ## SANS Institute
 
@@ -213,23 +212,6 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 <Route author="LogicJake" example="/kpmg/insights" path="/kpmg/insights" />
 
-## 抽屉
-
-### 新热榜
-
-<Route author="xyqfer" example="/chouti/hot" path="/chouti/:subject?" :paramsDesc="['主题名称']">
-
-| 热榜 | 42 区 | 段子  | 图片 | 挨踢 1024 | 你问我答 |
-| ---- | ----- | ----- | ---- | --------- | -------- |
-| hot  | news  | scoff | pic  | tec       | ask      |
-
-</Route>
-
-## 电鸭社区
-
-### 工作机会
-
-<Route author="sfyumi" example="/eleduck/jobs" path="/eleduck/jobs"/>
 ## 福利资源-met.red
 
 ### 福利资源-met.red
@@ -405,6 +387,34 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### 新闻动态
 
 <Route author="kt286" example="/tprtc/news" path="/tprtc/news"/>
+
+## 武汉肺炎疫情新闻动态
+
+### 财新网 - 武汉肺炎防疫全纪录
+
+<Route author="DIYgod" example="/coronavirus/caixin" path="/coronavirus/caixin"/>
+
+### 丁香园 - 全国新型肺炎疫情实时动态
+
+<Route author="DIYgod" example="/coronavirus/dxy" path="/coronavirus/dxy"/>
+
+### South China Morning Post - China coronavirus outbreak
+
+<Route author="DIYgod" example="/coronavirus/scmp" path="/coronavirus/scmp"/>
+
+## 新趣集
+
+> 官方 Feed 地址为: [https://xinquji.com/rss](https://xinquji.com/rss)
+
+### 今日最佳
+
+<Route author="kiddyuchina" example="/xinquji/today" path="/xinquji/today">
+</Route>
+
+### 今日国内
+
+<Route author="kiddyuchina" example="/xinquji/today/internal" path="/xinquji/today/internal">
+</Route>
 
 ## 新田惠海官方网站
 
