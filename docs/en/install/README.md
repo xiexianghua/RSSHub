@@ -367,3 +367,12 @@ Access control includes a whitelist and a blacklist, support IP and route, use `
 -   mail:
 
     -   `EMAIL_CONFIG_{email}`: Mail setting, replace `{email}` with the email account, replace `@` in email account with `.`, eg. `EMAIL_CONFIG_xxx.gmail.com`. the value is in the format of `password=password&host=server&port=port`, eg. `password=123456&host=imap.gmail.com&port=993`
+
+-   nhentai torrent: [Registration](https://nhentai.net/register/)
+
+    -   `NHENTAI_USERNAME`: nhentai username or email
+    -   `NHENTAI_PASSWORD`: nhentai password
+
+-   discuz cookies
+
+    -   `DISCUZ_COOKIE_{cid}`: Cookie of a forum powered by discuz, cid can be anything from 00 to 99. When visiting route discuz, using cid to specify this cookie.

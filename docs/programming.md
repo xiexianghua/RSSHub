@@ -26,9 +26,21 @@ pageClass: routes
 
 ## GitChat
 
-### 最新
+### 最新文章
 
-<Route author="xyqfer" example="/gitchat/newest" path="/gitchat/newest"/>
+<Route author="hoilc" example="/gitchat/newest" path="/gitchat/newest/:category?/:selected?" :paramsDesc="['分类 ID, 置空或`all`代表全部, 具体值需要抓取前端请求, 以下列出可能有变动, 仅供参考','是否只显示严选文章, 任意值为是, 置空为否']" />
+
+| 分类名   | 分类 ID                  |
+| :------- | :----------------------- |
+| 前端     | 58e84f875295227534aad506 |
+| 后端     | 5d8b7c3786194a1921979122 |
+| 移动开发 | 5d8b7c3786194a1921979123 |
+| 运维     | 5901bd477b61a76bc4016423 |
+| 测试     | 58e84f425295227534aad502 |
+| 架构     | 58e84f6bad952d6b3428af9a |
+| 人工智能 | 58e84f53ec8e9e7b34457809 |
+| 职场     | 58e84f1584c651693437f27c |
+| 互联网   | 5d8b7c3786194a1921979124 |
 
 > GitChat 需要付费订阅, RSS 仅做更新提醒, 不含付费内容.
 
@@ -268,9 +280,7 @@ GitHub 官方也提供了一些 RSS:
 
 ### Scala Blog
 
-<Route author="fengkx" example="/scala/blog/posts" path="/scala/blog/:part?" :paramsDesc="['部分']" >
-默认为All part参数可在url中获得
-</Route>
+<Route author="fengkx" example="/scala/blog/posts" path="/scala/blog/:part?" :paramsDesc="['部分, 默认为All, part参数可在url中获得']" />
 
 ## segmentfault
 
@@ -295,6 +305,12 @@ GitHub 官方也提供了一些 RSS:
 | featured | trending        | trending_m       | trending_d     | popular      | new            |
 
 </Route>
+
+## wolley
+
+### posts
+
+<Route author="umm233" example="/wolley" path="/wolley/index"/>
 
 ## 阿里云
 
@@ -485,6 +501,18 @@ GitHub 官方也提供了一些 RSS:
 ### 问答主题
 
 <Route author="loveely7" example="/oschina/topic/weekly-news" path="/oschina/topic/:topic" :paramsDesc="['主题名, 可从[全部主题](https://www.oschina.net/question/topics)进入主题页, 在 URL 中找到']"/>
+
+## 洛谷
+
+### 日报
+
+<Route author="LogicJake prnake" example="/luogu/daily" path="/luogu/daily/:id?" :paramsDesc="['年度日报所在帖子id，可在 URL 中找到，不填默认为2020年日报']">
+</Route>
+
+### 近期比赛
+
+<Route author="prnake" example="/luogu/contest" path="/luogu/contest">
+</Route>
 
 ## 码农俱乐部
 
