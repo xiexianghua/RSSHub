@@ -4,6 +4,32 @@ pageClass: routes
 
 # 学习
 
+## CTFHub Calendar
+
+### 查询国内外 CTF 赛事信息
+
+<Route author="frankli0324" example="/ctfhub/calendar" 
+    path="/ctfhub/calendar/:limit?/:form?/:class?/:title?" 
+    :paramsDesc="['通过CTF赛事名称过滤', '一个整数，筛选最近的limit场比赛', '比赛形式', '比赛类型']">
+
+| `:class` | 类型                             |
+| :------: | -------------------------------- |
+|    0     | Jeopardy[解题]                   |
+|    1     | Attack with Defense[AwD 攻防]    |
+|    2     | Robo Hacking Game[RHG AI 自动化] |
+|    3     | Real World[RW 真实世界]          |
+|    4     | King of The Hill[KoH 抢占山头]   |
+|    5     | Mix[混合]                        |
+
+> class 以 https://api.ctfhub.com/User_API/Event/getType 的返回结果为准
+
+| `:form` | 形式   |
+| :-----: | ------ |
+|    0    | 线上赛 |
+|    1    | 线下赛 |
+
+</Route>
+
 ## gradCafe
 
 ### gradCafe result
@@ -13,6 +39,25 @@ pageClass: routes
 ### gradCafe result by key words
 
 <Route author="liecn" example="/gradcafe/result/computer" path="/gradcafe/result/:type" :paramsDesc="['按关键词进行搜索，如 computer']"/>
+
+## X-MOL 平台
+
+### 新闻
+
+<Route author="cssxsh" example="/x-mol/news/3" path="/x-mol/news/:tag?" :paramsDesc="['数字编号，可从新闻列表URL得到。为空时从新闻主页获取新闻。']" />
+
+## 领研
+
+### 论文
+
+<Route author="yech1990" example="/linkresearcher/category=theses&subject=生物" path="/linkresearcher/theses/:param" :paramsDesc="['参数，如 subject=生物']"/>
+
+| `:param` | 举例            | 定义                                 |
+| -------- | --------------- | ------------------------------------ |
+| category | category=thesis | **必填**，theses/information/careers |
+| subject  | subject=生物    | 可置空                               |
+| columns  | columns=健康    | 可置空                               |
+| query    | query=病毒      | 可置空                               |
 
 ## 码农周刊
 
